@@ -3,30 +3,30 @@ import React from "react";
 
 type Props = {
   name: string;
-  age: number;
   profession: string;
-  description: string;
+  hobbies: string[];
+  intro: string;
 };
 
-const ProfileCard: React.FC<Props> = ({
-  name,
-  age,
-  profession,
-  description,
-}) => {
+const ProfileCard: React.FC<Props> = ({ name, profession, hobbies, intro }) => {
   return (
-    <div className="bg-white rounded-lg shadow-lg p-6 w-96 text-center">
-      {/* User's Name */}
-      <h2 className="text-2xl font-bold mb-2 text-gray-800">{name}</h2>
-      {/* User's Age */}
-      <p className="text-gray-500 text-sm">Age: {age}</p>
-      {/* User's Profession */}
-      <p className="text-lg font-medium text-purple-700 mt-2">{profession}</p>
-      {/* User's Description */}
-      <p className="text-gray-600 mt-4">{description}</p>
-      {/* Footer Line */}
-      <div className="mt-6 border-t pt-4 text-gray-400 text-sm">
-        "Props make data sharing easy and components reusable!"
+    <div className="bg-white p-6 rounded-lg shadow-lg w-96 text-center transform transition-all hover:scale-105 hover:shadow-2xl">
+      {/* Name with Animation */}
+      <h2 className="text-2xl font-bold mb-2 text-gray-800 animate-pulse">
+        {name}
+      </h2>
+      {/* Profession */}
+      <p className="text-purple-600 text-lg font-medium mb-4">{profession}</p>
+      {/* Intro */}
+      <p className="text-gray-600 mb-4">{intro}</p>
+      {/* Hobbies */}
+      <div>
+        <h3 className="text-gray-800 font-semibold mb-2">Hobbies:</h3>
+        <ul className="list-disc list-inside text-gray-600">
+          {hobbies.map((hobby, index) => (
+            <li key={index}>{hobby}</li>
+          ))}
+        </ul>
       </div>
     </div>
   );
