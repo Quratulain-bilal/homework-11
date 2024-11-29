@@ -1,5 +1,6 @@
+// App.tsx
 import React from "react";
-import ProfileCard from "./Componenet/ProfileCard"
+import ProfileCard from "./ProfileCard";
 
 const App = () => {
   // Aapki details yahan store hongi
